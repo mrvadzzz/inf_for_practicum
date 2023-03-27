@@ -1,0 +1,12 @@
+def test_range(start, end, *rng):
+    numbers = []
+    for num in rng:
+        if start <= num <= end:
+            numbers.append(num)
+        else:
+            print(f'Число {num} за границами диапазона')
+    return numbers 
+
+start = 4
+end = 12
+print(test_range(start, end, 5, 16, 32, 6, 7, 1))
