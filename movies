@@ -20,5 +20,5 @@ for movie, info in recommended_movies.items():
         print(f'Фильм "{movie}" не интересен: "{info["review"]}". Фильм удален из рекомендаций.')
 for i in clean_movies.keys():
     if i in recommended_movies:
-        recommended_movies.pop(key)
+        recommended_movies.pop(i)
 print(favorite_movies)
