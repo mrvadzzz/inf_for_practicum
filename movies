@@ -1,0 +1,24 @@
+favorite_movies = {}
+
+recommended_movies = {
+    'Хенкок': {'rating': 4.5, 'review': 'Смотреть можно'},
+    'Матрица': {'rating': 4.7, 'review': 'Фильм крут'},
+    'Кибер': {'rating': 2.5, 'review': 'Так себе киношечка'},
+    'Трон': {'rating': 3.8, 'review': 'Так себе киношечка'},
+    'Мстители': {'rating': 4.7, 'review': 'Фильм крут'},
+    'Хакеры':  {'rating': 4.5, 'review': 'Смотреть можно'}
+}
+
+for movie, info in recommended_movies.items():
+    rating = info['rating']
+    if rating >= 4.0:
+        favorite_movies[movie] = rating
+        print(f'У фильма "{movie}" хороший отзыв: "{info["review"]}". Фильм добавлен в избранное.')
+    else:
+        clean_movies = {}
+        clean_movies[movie] = rating
+        print(f'Фильм "{movie}" не интересен: "{info["review"]}". Фильм удален из рекомендаций.')
+for i in clean_movies.keys():
+    if i in recommended_movies:
+        recommended_movies.pop(key)
+print(favorite_movies)
